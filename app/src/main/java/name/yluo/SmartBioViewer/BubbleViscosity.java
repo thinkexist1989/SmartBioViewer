@@ -28,10 +28,11 @@ import java.util.concurrent.TimeUnit;
 public class BubbleViscosity extends SurfaceView implements SurfaceHolder.Callback, Runnable {
     private static ScheduledExecutorService scheduledThreadPool;
     private Context context;
-    private String paintColor = "#25DA29";// 不透明圆弧的颜色
-//    private String paintColor = "#123456";// 不透明圆弧的颜色
+//    private String paintColor = "#25DA29";// 不透明圆弧的颜色
+    private String paintColor = "#00DA00";// 不透明圆弧的颜色
     private String centreColor = "#00000000"; // 中间圆的颜色
-    private String minCentreColor = "#9025DA29"; //透明的圆弧
+//    private String minCentreColor = "#9025DA29"; //透明的圆弧
+    private String minCentreColor = "#9000DA00"; //透明的圆弧
     private int screenHeight;
     private int screenWidth;
 
@@ -73,6 +74,7 @@ public class BubbleViscosity extends SurfaceView implements SurfaceHolder.Callba
     private Path lastPath; // 所有的路劲
     private Random random;
     private Paint textPaint;
+    private int concent = 0;
     private String text="0.01 nM";
     private Rect rect;
 
@@ -110,11 +112,14 @@ public class BubbleViscosity extends SurfaceView implements SurfaceHolder.Callba
         centreRadius = dip2Dimension(100f, context);//中间圆的半径
         bubbleRadius = dip2Dimension(10f, context);//气泡的半径
         random = new Random();
+
+
         //底部圆
         lastPaint = new Paint();
         lastPaint.setAntiAlias(true);
         lastPaint.setStyle(Paint.Style.FILL);
-        lastPaint.setColor(Color.parseColor(paintColor));
+//        lastPaint.setColor(Color.parseColor(paintColor));
+        lastPaint.setColor(CustomColor.getDarkColor());
         lastPaint.setStrokeWidth(2);
 
         lastPath = new Path();
@@ -130,26 +135,29 @@ public class BubbleViscosity extends SurfaceView implements SurfaceHolder.Callba
         arcPaint = new Paint();
         arcPaint.setAntiAlias(true);
         arcPaint.setStyle(Paint.Style.FILL);
-        arcPaint.setColor(Color.parseColor(paintColor));
+//        arcPaint.setColor(Color.parseColor(paintColor));
+        arcPaint.setColor(CustomColor.getDarkColor());
         arcPaint.setStrokeWidth(2);
         //  透明圆弧的画笔
         minCentrePaint = new Paint();
         minCentrePaint.setAntiAlias(true);
         minCentrePaint.setStyle(Paint.Style.FILL);
-        minCentrePaint.setColor(Color.parseColor(minCentreColor));
+//        minCentrePaint.setColor(Color.parseColor(minCentreColor));
+        minCentrePaint.setColor(CustomColor.getTransColor());
         minCentrePaint.setStrokeWidth(2);
         // 气泡的画笔
         bubblePaint = new Paint();
         bubblePaint.setAntiAlias(true);
         bubblePaint.setStyle(Paint.Style.FILL);
-        bubblePaint.setColor(Color.parseColor(minCentreColor));
+//        bubblePaint.setColor(Color.parseColor(minCentreColor));
+        bubblePaint.setColor(CustomColor.getTransColor());
         bubblePaint.setStrokeWidth(2);
         //文字画笔
         textPaint = new Paint();
         textPaint.setAntiAlias(true);
         textPaint.setStyle(Paint.Style.FILL);
 //        textPaint.setColor(Color.parseColor("#FFFFFF"));
-        textPaint.setColor(Color.parseColor("#25DA29"));
+        textPaint.setColor(CustomColor.getDarkColor());
         textPaint.setStrokeWidth(2);
         textPaint.setTextSize(dip2Dimension(40f, context));
 
@@ -159,6 +167,54 @@ public class BubbleViscosity extends SurfaceView implements SurfaceHolder.Callba
 
 
     private void onMDraw() {
+        //更新浓度显示值
+        text = (float)CustomColor.getNum()/1000.0 + " nM";
+
+        //底部圆
+//        lastPaint = new Paint();
+        lastPaint.setAntiAlias(true);
+        lastPaint.setStyle(Paint.Style.FILL);
+//        lastPaint.setColor(Color.parseColor(paintColor));
+        lastPaint.setColor(CustomColor.getDarkColor());
+        lastPaint.setStrokeWidth(2);
+        //中间圆的画笔
+//        centrePaint = new Paint();
+        centrePaint.setAntiAlias(true);
+        centrePaint.setStyle(Paint.Style.FILL);
+        centrePaint.setStrokeWidth(2);
+        centrePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
+        centrePaint.setColor(Color.parseColor(centreColor));
+        // 不透明圆弧的画笔
+//        arcPaint = new Paint();
+        arcPaint.setAntiAlias(true);
+        arcPaint.setStyle(Paint.Style.FILL);
+//        arcPaint.setColor(Color.parseColor(paintColor));
+        arcPaint.setColor(CustomColor.getDarkColor());
+        arcPaint.setStrokeWidth(2);
+        //  透明圆弧的画笔
+//        minCentrePaint = new Paint();
+        minCentrePaint.setAntiAlias(true);
+        minCentrePaint.setStyle(Paint.Style.FILL);
+//        minCentrePaint.setColor(Color.parseColor(minCentreColor));
+        minCentrePaint.setColor(CustomColor.getTransColor());
+        minCentrePaint.setStrokeWidth(2);
+        // 气泡的画笔
+//        bubblePaint = new Paint();
+        bubblePaint.setAntiAlias(true);
+        bubblePaint.setStyle(Paint.Style.FILL);
+//        bubblePaint.setColor(Color.parseColor(minCentreColor));
+        bubblePaint.setColor(CustomColor.getTransColor());
+        bubblePaint.setStrokeWidth(2);
+        //文字画笔
+//        textPaint = new Paint();
+        textPaint.setAntiAlias(true);
+        textPaint.setStyle(Paint.Style.FILL);
+//        textPaint.setColor(Color.parseColor("#FFFFFF"));
+        textPaint.setColor(CustomColor.getDarkColor());
+        textPaint.setStrokeWidth(2);
+        textPaint.setTextSize(dip2Dimension(40f, context));
+
+
         Canvas canvas = mHolder.lockCanvas();
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);//绘制透明色
         bubbleDraw(canvas);  //画气泡

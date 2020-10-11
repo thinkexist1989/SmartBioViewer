@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_target"
+            android:icon="@android:drawable/ic_menu_mylocation"
+            android:title="Target Selection" />
+        <item
+            android:id="@+id/nav_mode"
+            android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="Mode Selection" />
+    </group>
+</menu>
