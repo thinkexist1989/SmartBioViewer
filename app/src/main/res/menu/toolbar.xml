@@ -13,4 +13,9 @@
         android:title="Settings"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/viewGithub"
+        android:title="@string/viewGithub">
+    </item>
+
 </menu>

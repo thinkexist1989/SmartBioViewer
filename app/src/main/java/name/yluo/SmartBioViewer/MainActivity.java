@@ -7,8 +7,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -49,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
+            case R.id.viewGithub:
+                Intent in = new Intent(Intent.ACTION_VIEW);
+                in.setData(Uri.parse("https://github.com/thinkexist1989/SmartBioViewer"));
+                startActivity(in);
+                break;
             default:
         }
         return true;
@@ -60,6 +67,13 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar, menu);
 //        return super.onCreateOptionsMenu(menu);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tv_target.setText(CustomInfo.target.toString());
+        tv_mode.setText(CustomInfo.testMode.toString());
     }
 
     @Override
@@ -79,7 +93,11 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tv_target = (TextView) findViewById(R.id.textView_target);
+        tv_target.setText(CustomInfo.target.toString());
+
         tv_mode = (TextView) findViewById(R.id.textView_mode);
+        tv_mode.setText(CustomInfo.testMode.toString());
+
         tv_state = (TextView) findViewById(R.id.textView_state);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -94,6 +112,19 @@ public class MainActivity extends AppCompatActivity {
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_mode:
+                        Log.i(TAG, "mode selection");
+                        Intent intent1 = new Intent(MainActivity.this, ModeActivity.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.nav_target:
+                        Intent intent2 = new Intent(MainActivity.this, TargetActivity.class);
+                        startActivity(intent2);
+                        break;
+                    default:
+                }
+
                 mDrawerLayout.closeDrawers();
                 return true;
             }
