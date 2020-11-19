@@ -140,14 +140,12 @@ public class MainActivity extends AppCompatActivity {
                 if(i >= 1000) i = 0;
                 int color = CustomColor.getColor(i);
                 Log.i(TAG, "r is: " + Color.red(color) + "  g is: " + Color.green(color));
-                window.setStatusBarColor(color);
-                toolbar.setBackgroundColor(color);
-//                tv_mode.setBackgroundColor(Color.rgb(r, g ,b));
-//                tv_target.setBackgroundColor(Color.rgb(r,g,b));
+//                window.setStatusBarColor(color);
+//                toolbar.setBackgroundColor(color);
 
-                ((GradientDrawable) tv_mode.getBackground()).setColor(color);
-                ((GradientDrawable) tv_target.getBackground()).setColor(color);
-                ((GradientDrawable) tv_state.getBackground()).setColor(color);
+//                ((GradientDrawable) tv_mode.getBackground()).setColor(color);
+//                ((GradientDrawable) tv_target.getBackground()).setColor(color);
+//                ((GradientDrawable) tv_state.getBackground()).setColor(color);
 
                 if(i <= 333)
                     tv_state.setText("NORMAL");
