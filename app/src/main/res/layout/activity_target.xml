@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
     tools:context=".TargetActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -28,9 +29,9 @@
         android:id="@+id/gridlayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="2"
+        android:columnCount="1"
         android:orientation="horizontal"
-        android:rowCount="2"
+        android:rowCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -38,8 +39,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/target_1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_gravity="center"
             android:layout_columnWeight="1"
@@ -58,14 +59,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/maidou" />
+                    android:src="@drawable/ifn_gama" />
 
                 <TextView
                     android:id="@+id/target_1_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="IFH-8"
+                    android:text="IFN-gama"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -74,8 +75,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/target_2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_gravity="center"
             android:layout_columnWeight="1"
@@ -94,14 +95,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/maidou" />
+                    android:src="@drawable/tnf_alpha" />
 
                 <TextView
                     android:id="@+id/target_2_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="IL-6"
+                    android:text="TNF-alpha"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -110,8 +111,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/target_3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:layout_gravity="center"
             android:layout_columnWeight="1"
@@ -130,50 +131,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/maidou" />
+                    android:src="@drawable/il_6" />
 
                 <TextView
                     android:id="@+id/target_3_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="TNF-ALPHA"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/target_4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:layout_columnWeight="1"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/target_4_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/maidou" />
-
-                <TextView
-                    android:id="@+id/target_4_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="TNF-BETA"
+                    android:text="IL-6"
                     android:textSize="16sp" />
 
             </LinearLayout>

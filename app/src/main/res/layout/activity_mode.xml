@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
     tools:context=".ModeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -26,11 +27,11 @@
 
     <GridLayout
         android:id="@+id/gridlayout1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="1"
         android:orientation="horizontal"
-        android:rowCount="2"
+        android:rowCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -58,14 +59,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/maidou" />
+                    android:src="@drawable/serum" />
 
                 <TextView
                     android:id="@+id/mode_1_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Saliva"
+                    android:text="SERUM"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -94,21 +95,55 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/maidou" />
+                    android:src="@drawable/saliva" />
 
                 <TextView
                     android:id="@+id/mode_2_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Urine"
+                    android:text="SALIVA"
                     android:textSize="16sp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mode_3"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_columnWeight="1"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="4dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/mode_3_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/urine" />
+
+                <TextView
+                    android:id="@+id/mode_3_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="URINE"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

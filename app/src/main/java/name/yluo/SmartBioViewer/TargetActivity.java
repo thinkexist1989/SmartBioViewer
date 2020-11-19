@@ -3,6 +3,7 @@ package name.yluo.SmartBioViewer;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,7 +18,9 @@ public class TargetActivity extends AppCompatActivity {
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomInfo.target = CustomInfo.Target.IFH8;
+                CustomInfo.target = CustomInfo.Target.IFN_gama;
+                Intent intent = new Intent(TargetActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -26,7 +29,9 @@ public class TargetActivity extends AppCompatActivity {
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomInfo.target = CustomInfo.Target.IL6;
+                CustomInfo.target = CustomInfo.Target.TNF_alpha;
+                Intent intent = new Intent(TargetActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -35,18 +40,12 @@ public class TargetActivity extends AppCompatActivity {
         cardView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomInfo.target = CustomInfo.Target.TNFALPHA;
+                CustomInfo.target = CustomInfo.Target.IL_6;
+                Intent intent = new Intent(TargetActivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
 
-        CardView cardView4 = (CardView) findViewById(R.id.target_4);
-        cardView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CustomInfo.target = CustomInfo.Target.TNFBETA;
-                finish();
-            }
-        });
     }
 }

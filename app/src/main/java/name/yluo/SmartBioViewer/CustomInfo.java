@@ -2,11 +2,11 @@ package name.yluo.SmartBioViewer;
 
 public class CustomInfo {
     public enum Target {
-        IFH8, IL6, TNFALPHA, TNFBETA, IL10
+        TNF_alpha, IFN_gama, IL_6
     }
     public enum TestMode {
-        SALIVA, URINE
+        SERUM, SALIVA, URINE
     }
-    public static Target target = Target.IFH8;
+    public static Target target = Target.IFN_gama;
     public static TestMode testMode = TestMode.SALIVA;
 }
