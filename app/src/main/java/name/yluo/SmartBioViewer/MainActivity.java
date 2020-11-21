@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.history:
-                Toast.makeText(this, "You clicked History!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, ModeActivity.class);
+//                Toast.makeText(this, "You clicked History!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
                 startActivity(intent);
                 break;
             case R.id.settings:
