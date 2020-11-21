@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/cardview_dark_background"
+            android:background="@color/colorMenu"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -37,20 +37,21 @@
             android:paddingTop="40dp"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textView_target"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:background="@drawable/round_corner_shape"
-                android:text="IFH-8"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/button_start"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <TextView-->
+<!--                android:id="@+id/textView_target"-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:gravity="center"-->
+<!--                android:background="@drawable/round_corner_shape"-->
+<!--                android:text="IFH-8"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <!--            <ImageButton-->
             <!--                android:id="@+id/fab_add"-->
@@ -75,35 +76,21 @@
             <!--                app:layout_constraintEnd_toEndOf="parent"-->
             <!--                app:srcCompat="@android:drawable/ic_media_play" />-->
 
-            <Button
-                android:id="@+id/button_start"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/ripple_oval"
-                android:text="start"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView_mode"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/round_corner_shape"
-                android:gravity="center"
-                android:text="Saliva Test"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button_start"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <TextView-->
+<!--                android:id="@+id/textView_mode"-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:background="@drawable/round_corner_shape"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Saliva Test"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <!--            <Button-->
             <!--                android:id="@+id/button"-->
@@ -130,6 +117,34 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <Button-->
+<!--            android:id="@+id/button_start"-->
+<!--            android:layout_width="73dp"-->
+<!--            android:layout_height="75dp"-->
+<!--            android:layout_marginTop="400dp"-->
+<!--            android:background="@drawable/ripple_oval"-->
+<!--            android:text="START"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.899"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.853" />
 
         <name.yluo.SmartBioViewer.BubbleViscosity
             android:id="@+id/bubbleVis"

@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/backup"
+        android:id="@+id/history"
         android:icon="@drawable/ic_backup"
-        android:title="Backup"
+        android:title="History"
         app:showAsAction="always"/>
 
     <item

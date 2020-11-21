@@ -3,6 +3,13 @@
     <color name="colorPrimary">#202221</color>
     <color name="colorPrimaryDark">#39383A</color>
     <color name="colorAccent">#768887</color>
+    <color name="colorButton">#929292</color>
+    <color name="colorBackground">#707070</color>
+    <color name="colorMenu">#464646</color>
+    <color name="colorStatus">#323232</color>
+    <color name="colorNormal">#14D728</color>
+    <color name="colorWarning">#F8C31E</color>
+    <color name="colorAlert">#E43A28</color>
 <!--    <color name="colorPrimary">#25DA29</color>-->
 <!--    <color name="colorPrimaryDark">#25DA29</color>-->
 <!--    <color name="colorAccent">#25DA29</color>-->

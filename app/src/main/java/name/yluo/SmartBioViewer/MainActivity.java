@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     public Window window;
     public Toolbar toolbar;
-    public TextView tv_target;
-    public TextView tv_mode;
-    public Button btn_start;
+//    public TextView tv_target;
+//    public TextView tv_mode;
+    public FloatingActionButton btn_start;
     public TextView tv_state;
     public DrawerLayout mDrawerLayout;
 
@@ -43,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.backup:
-                Toast.makeText(this, "You clicked backup!", Toast.LENGTH_SHORT).show();
+            case R.id.history:
+                Toast.makeText(this, "You clicked History!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ModeActivity.class);
+                startActivity(intent);
                 break;
             case R.id.settings:
                 break;
@@ -72,8 +75,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        tv_target.setText(CustomInfo.target.toString());
-        tv_mode.setText(CustomInfo.testMode.toString());
+        this.setTitle(CustomInfo.target.toString()+ " in " + CustomInfo.testMode.toString());
+//        tv_target.setText(CustomInfo.target.toString());
+//        tv_mode.setText(CustomInfo.testMode.toString());
     }
 
     @Override
@@ -89,14 +93,18 @@ public class MainActivity extends AppCompatActivity {
         //设置状态栏颜色
 //        window.setStatusBarColor(Color.parseColor("#000000"));
 
-        btn_start = (Button) findViewById(R.id.button_start);
+        btn_start = (FloatingActionButton) findViewById(R.id.button_start);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        tv_target = (TextView) findViewById(R.id.textView_target);
-        tv_target.setText(CustomInfo.target.toString());
 
-        tv_mode = (TextView) findViewById(R.id.textView_mode);
-        tv_mode.setText(CustomInfo.testMode.toString());
+//        toolbar.setTitle(CustomInfo.target.toString()+ " " + CustomInfo.testMode.toString());
+        this.setTitle(CustomInfo.target.toString()+ "::" + CustomInfo.testMode.toString());
+
+//        tv_target = (TextView) findViewById(R.id.textView_target);
+//        tv_target.setText(CustomInfo.target.toString());
+//
+//        tv_mode = (TextView) findViewById(R.id.textView_mode);
+//        tv_mode.setText(CustomInfo.testMode.toString());
 
         tv_state = (TextView) findViewById(R.id.textView_state);
 
@@ -145,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
 //                ((GradientDrawable) tv_mode.getBackground()).setColor(color);
 //                ((GradientDrawable) tv_target.getBackground()).setColor(color);
-//                ((GradientDrawable) tv_state.getBackground()).setColor(color);
+                ((GradientDrawable) tv_state.getBackground()).setColor(color);
 
                 if(i <= 333)
                     tv_state.setText("NORMAL");
