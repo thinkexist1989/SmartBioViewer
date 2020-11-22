@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public TextView tv_state;
     public DrawerLayout mDrawerLayout;
 
+    public int i = 500; //浓度
+
 //    static int r = 0x00;
 //    static int g = 0xDA;
 //    static int b = 0x29;
@@ -143,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                r = (int) ((float)i*0.001*218);
 //                g = (int) ((float)(1000.0 - i)*0.001* 218);
-                int i = (int) (Math.random()*1000);
+//                int i = (int) (Math.random()*1000);
+                i = (i == 40)? 460 : 40;
 
                 if(i >= 1000) i = 0;
                 int color = CustomColor.getColor(i);
@@ -155,9 +158,9 @@ public class MainActivity extends AppCompatActivity {
 //                ((GradientDrawable) tv_target.getBackground()).setColor(color);
                 ((GradientDrawable) tv_state.getBackground()).setColor(color);
 
-                if(i <= 333)
+                if(i <= 300)
                     tv_state.setText("NORMAL");
-                else if(i > 333 && i < 666)
+                else if(i > 300 && i < 340)
                     tv_state.setText("WARNING");
                 else
                     tv_state.setText("ALERT");

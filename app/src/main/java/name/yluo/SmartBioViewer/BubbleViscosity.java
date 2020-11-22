@@ -18,6 +18,7 @@ import android.view.SurfaceView;
 
 import androidx.annotation.Nullable;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -168,7 +169,9 @@ public class BubbleViscosity extends SurfaceView implements SurfaceHolder.Callba
 
     private void onMDraw() {
         //更新浓度显示值
-        text = (float)CustomColor.getNum()/1000.0 + " nM";
+        double val = CustomColor.getNum()*0.001*0.05;
+//        DecimalFormat df = new DecimalFormat("0.000");
+        text = String.format("%.3f", val) + " nM";
 
         //底部圆
 //        lastPaint = new Paint();

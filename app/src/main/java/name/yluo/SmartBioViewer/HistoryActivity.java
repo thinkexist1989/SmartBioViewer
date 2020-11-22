@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -34,8 +35,8 @@ public class HistoryActivity extends AppCompatActivity {
         chart.setBackgroundColor(this.getColor(R.color.colorBackground));
         chart.getDescription().setText("Measured Level (pM)");
         chart.getDescription().setTextSize(20);
-        chart.getDescription().setTextColor(Color.rgb(50,50,50));
-        chart.getDescription().setPosition(800,150);
+        chart.getDescription().setTextColor(Color.rgb(255,255,255));
+        chart.getDescription().setPosition(800,300);
 
         // if more than 60 entries are displayed in the chart, no values will be
         // drawn
@@ -46,11 +47,25 @@ public class HistoryActivity extends AppCompatActivity {
 
         chart.setDrawBarShadow(false);
         chart.setDrawGridBackground(false);
+        chart.setExtraLeftOffset(10f);
+        chart.setExtraBottomOffset(10f);
+        chart.setExtraTopOffset(90f);
+        chart.setExtraRightOffset(10f);
+
+        YAxis yleft = chart.getAxisLeft();
+        yleft.setTextSize(15f);
+        yleft.setTextColor(Color.rgb(255,255,255));
+
+        YAxis yright = chart.getAxisRight();
+        yright.setTextSize(15f);
+        yright.setTextColor(Color.rgb(255,255,255));
+
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setDrawLabels(true);
         xAxis.setLabelRotationAngle(-45);
-//        xAxis.setTextSize(15f);
+        xAxis.setTextSize(15f);
+        xAxis.setTextColor(Color.rgb(255,255,255));
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(0f);
         xAxis.setGranularity(1f);
@@ -78,9 +93,9 @@ public class HistoryActivity extends AppCompatActivity {
         values.add(new BarEntry(5, 8.0f));
         colors[4] = Color.rgb(146,146,146);
         values.add(new BarEntry(6, 9.0f));
-        colors[5] = Color.rgb(248,195,30);
+        colors[5] = Color.rgb(146,146,146);
         values.add(new BarEntry(7, 13.0f));
-        colors[6] = Color.rgb(228,58,40);
+        colors[6] = Color.rgb(146,146,146);
 
         BarDataSet set1;
         set1 = new BarDataSet(values, "Data Set");
@@ -92,7 +107,8 @@ public class HistoryActivity extends AppCompatActivity {
         dataSets.add(set1);
 
         BarData data = new BarData(dataSets);
-        data.setValueTextSize(10f);
+        data.setValueTextSize(15f);
+        data.setValueTextColor(Color.rgb(255,255,255));
         chart.setData(data);
         chart.setFitBars(true);
 
