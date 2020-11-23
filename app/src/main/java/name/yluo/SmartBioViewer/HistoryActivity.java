@@ -32,7 +32,7 @@ public class HistoryActivity extends AppCompatActivity {
         chart = findViewById(R.id.barChart);
 
 //        chart.getDescription().setEnabled(false);
-        chart.setBackgroundColor(this.getColor(R.color.colorBackground));
+//        chart.setBackgroundColor(this.getColor(R.color.colorBackground));
         chart.getDescription().setText("Measured Level (pM)");
         chart.getDescription().setTextSize(20);
         chart.getDescription().setTextColor(Color.rgb(255,255,255));

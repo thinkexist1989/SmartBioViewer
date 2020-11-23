@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "name.yluo.SmartBioViewer"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion 17
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
